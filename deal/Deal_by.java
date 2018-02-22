@@ -22,8 +22,12 @@ public class Deal_by {
     private static int inner_product = 0;
     private static User[] users = new User[USER_COUNT];
     private static Product[] products = new Product[PRODUCT_COUNT];
-    private static boolean flag1 = false;
-    private static boolean flag2 = false;
+    private static boolean flag1 = true;//false; для создания заглушки тестовых данных
+    private static boolean flag2 = true;//false;
+
+
+
+
 
 
     public static void main(String[] args) {
@@ -34,20 +38,18 @@ public class Deal_by {
 
     private static void dealAction() {
         String chois;
+        users[0]=new User("name_1","email_1",1,"user_role_one");
+        users[1]=new User("name_2","email_2",2,"user_role_two");
+        users[2]=new User("name_3","email_3",3,"user_role_two");
 
+        products[0]=new Product("name_product_1",100,1);
+        products[1]=new Product("name_product_2",200,2);
+        products[2]=new Product("name_product_3",300,3);
 
         //тестовый набор пользователей
 
         System.out.println("Vvod user:");
-        users[0] = new User("name_1", "email_1", 1, "user_role_one");
-        users[1] = new User("name_2", "email_2", 2, "user_role_two");
-        users[2] = new User("name_3", "email_3", 3, "user_role_two");
 
-        products[0] = new Product("name_product_1", 100, 1);
-        products[1] = new Product("name_product_2", 200, 2);
-        products[2] = new Product("name_product_3", 300, 3);
-        flag1 = true;
-        flag2 = true;
 
         System.out.println("Введите номер необходимого дейсвия:");
         System.out.println("1) Ввод пользователя.");
@@ -148,26 +150,37 @@ public class Deal_by {
             chois_byer = inputText("Вводим тут ");
             System.out.println("Выберете товар или завершите сделку");
             chois_product();
-
             System.out.println("Подтвердите офёрту");
-
-
         } else {
             System.out.println("Не хватает пользователей с ролями");
         }
-
     }
 
     private static Product[] chois_product() {
-        out_product();
-        while (true){
-            //реализовать логику выбора товара
-
-            break;
-
+        Integer[] product_id = new Integer[2];
+        Integer[] product_count = new Integer[2];
+        Product[] products = new Product[2];
+        //считать ввод
+        for (int i = 0; i < 2; i++) {
+            out_product();
+            products[i] = getProduct_on_id(Integer.parseInt(inputText("Вводим тут id " + (i + 1) + "товара:")));
+            products[i].setcount(Integer.parseInt(inputText("Вводим тут количество товара:")));
         }
+        return products;
+
+        //проверить на наличие такого товара
 
 
+    }
+
+    private static Product getProduct_on_id(int i) {
+        Product prr = new Product();
+        for (Product pr : products) {
+            if (pr.getId().equals(i)) {
+                prr = pr;
+            }
+        }
+        return prr;
     }
 
     private static void out_product() {

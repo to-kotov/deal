@@ -6,27 +6,36 @@ package deal;
 public class Product {
 
     private String name;
-    private int cost;
-    private int id;
+    private Integer cost;
+    private Integer id;
+    private Integer count;
 
     public String getName() {
         return name;
     }
 
-    public int getCost() {
+    public Integer getCost() {
         return cost;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setCost(String email) {
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setcount(int cost) {
+        this.count = count;
     }
 
     public void setName(String name) {
