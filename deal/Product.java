@@ -13,7 +13,6 @@ public class Product {
     public String getName() {
         return name;
     }
-
     public Integer getCost() {
         return cost;
     }

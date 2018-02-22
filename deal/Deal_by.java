@@ -108,6 +108,7 @@ public class Deal_by {
 
     }
 
+
     private static void in_user() {
         if (inner_user < 3) {
             String name = inputText("Name");
