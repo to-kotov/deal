@@ -57,7 +57,7 @@ public class Deal_by {
         System.out.println("5) EXIT");
 
 
-        chois = inputText("Вводим тут ");
+        chois = inputText("Вводим тут  ");
         System.out.println(chois);
 
         switch (chois) {
