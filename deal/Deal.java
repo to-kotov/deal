@@ -10,6 +10,8 @@ public class Deal {
     private Integer[] product_count;
 
 
+    private static void prise() {
+    }
 
-    private static void prise(){};
+    ;
 }

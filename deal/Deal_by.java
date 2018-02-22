@@ -26,10 +26,6 @@ public class Deal_by {
     private static boolean flag2 = true;//false;
 
 
-
-
-
-
     public static void main(String[] args) {
         while (true) {
             new Deal_by().dealAction();//выбор действия
@@ -38,13 +34,13 @@ public class Deal_by {
 
     private static void dealAction() {
         String chois;
-        users[0]=new User("name_1","email_1",1,"user_role_one");
-        users[1]=new User("name_2","email_2",2,"user_role_two");
-        users[2]=new User("name_3","email_3",3,"user_role_two");
+        users[0] = new User("name_1", "email_1", 1, "user_role_one");
+        users[1] = new User("name_2", "email_2", 2, "user_role_two");
+        users[2] = new User("name_3", "email_3", 3, "user_role_two");
 
-        products[0]=new Product("name_product_1",100,1);
-        products[1]=new Product("name_product_2",200,2);
-        products[2]=new Product("name_product_3",300,3);
+        products[0] = new Product("name_product_1", 100, 1);
+        products[1] = new Product("name_product_2", 200, 2);
+        products[2] = new Product("name_product_3", 300, 3);
 
         //тестовый набор пользователей
 
