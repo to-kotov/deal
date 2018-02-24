@@ -18,15 +18,18 @@ public class Deal_by {
 
     private static final int USER_COUNT = 3;
     private static final int PRODUCT_COUNT = 3;
+    private static final int DEAL_COUNT = 3;
     private static int inner_user = 0;
     private static int inner_product = 0;
     private static User[] users = new User[USER_COUNT];
     private static Product[] products = new Product[PRODUCT_COUNT];
+    private static Deal[] deals = new Deal[DEAL_COUNT];
     private static boolean flag1 = true;//false; для создания заглушки тестовых данных
     private static boolean flag2 = true;//false;
-
+    private static int deal_now=0;
 
     public static void main(String[] args) {
+
         while (true) {
             new Deal_by().dealAction();//выбор действия
         }
@@ -34,6 +37,7 @@ public class Deal_by {
 
     private static void dealAction() {
         String chois;
+        Deal deal = new Deal();
         users[0] = new User("name_1", "email_1", 1, "user_role_one");
         users[1] = new User("name_2", "email_2", 2, "user_role_two");
         users[2] = new User("name_3", "email_3", 3, "user_role_two");
@@ -136,17 +140,20 @@ public class Deal_by {
 
         String chois_seller;
         String chois_byer;
+        Product[] products = new Product[2];
 
         if (flag1 && flag2) {
 
             System.out.println("Выберите продавца");
             out_user("user_role_one");
+            //надо добавить проверку на соответствие введенного id на роль
             chois_seller = inputText("Вводим тут ");
             System.out.println("Выберете покупателя");
             out_user("user_role_two");
+            //надо добавить проверку на соответствие введенного id на роль
             chois_byer = inputText("Вводим тут ");
             System.out.println("Выберете товар или завершите сделку");
-            chois_product();
+            products = chois_product();
             System.out.println("Подтвердите офёрту");
         } else {
             System.out.println("Не хватает пользователей с ролями");
@@ -160,15 +167,13 @@ public class Deal_by {
         //считать ввод
         for (int i = 0; i < 2; i++) {
             out_product();
-            products[i] = getProduct_on_id(Integer.parseInt(inputText("Вводим тут id " + (i + 1) + "товара:")));
-            products[i].setcount(Integer.parseInt(inputText("Вводим тут количество товара:")));
+            products[i] = getProduct_on_id(Integer.parseInt(inputText("Вводим тут id " + (i + 1) + "товара")));
+            products[i].setcount(Integer.parseInt(inputText("Вводим тут количество товара")));
         }
         return products;
-
         //проверить на наличие такого товара
-
-
     }
+
 
     private static Product getProduct_on_id(int i) {
         Product prr = new Product();
