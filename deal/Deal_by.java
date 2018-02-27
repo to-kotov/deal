@@ -27,6 +27,9 @@ public class Deal_by {
     private static boolean flag1 = true;//false; для создания заглушки тестовых данных
     private static boolean flag2 = true;//false;
     private static int deal_now=0;
+    private static String seller_role = "user_role_one";
+    private static String buyer_role = "user_role_two";
+
 
     public static void main(String[] args) {
 
@@ -75,10 +78,7 @@ public class Deal_by {
             }
             case ("3"): {
                 System.out.println("Выбрали 3" + chois);
-                //Выбор продовца
                 deal_by();
-                //Выбор покупателя
-                //Выбор товара
                 //Показ деталей сделки
 
 
@@ -123,6 +123,27 @@ public class Deal_by {
         }
     }
 
+    private static String chois_dealers(String s) {
+        Boolean flag_u = true;
+        String chois_seller;
+        out_user(s);
+        while (flag_u) {
+
+            chois_seller = inputText("Вводим тут ");
+            for (User us : users) {
+                if (us.getId().equals(Integer.parseInt(chois_seller)) && us.getUser_role().equals(s)) {
+                    flag_u = false;
+                    break;
+                }
+            }
+            System.out.println("Ведите нового пользователя");
+            out_user(s);
+            chois_seller = inputText("Вводим тут ");
+        }
+        return chois_seller;
+    }
+
+
     private static void in_product() {
         if (inner_product < 3) {
             String name = inputText("Name");
@@ -145,13 +166,11 @@ public class Deal_by {
         if (flag1 && flag2) {
 
             System.out.println("Выберите продавца");
-            out_user("user_role_one");
-            //надо добавить проверку на соответствие введенного id на роль
-            chois_seller = inputText("Вводим тут ");
+            chois_seller=chois_dealers(seller_role);
+
             System.out.println("Выберете покупателя");
-            out_user("user_role_two");
-            //надо добавить проверку на соответствие введенного id на роль
-            chois_byer = inputText("Вводим тут ");
+            chois_byer =chois_dealers(buyer_role);
+            
             System.out.println("Выберете товар или завершите сделку");
             products = chois_product();
             System.out.println("Подтвердите офёрту");

@@ -7,7 +7,7 @@ public class User {
 
     private String name;
     private String email;
-    private int id;
+    private Integer id;
     private String user_role;
 
 
@@ -19,7 +19,7 @@ public class User {
         return email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
