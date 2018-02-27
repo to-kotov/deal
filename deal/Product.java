@@ -51,6 +51,4 @@ public class Product {
         this.cost = cost;
         this.id = id;
     }
-
-
 }

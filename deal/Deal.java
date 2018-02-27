@@ -37,6 +37,5 @@ public class Deal {
     private static void prise() {
     }
 
-
     ;
 }
