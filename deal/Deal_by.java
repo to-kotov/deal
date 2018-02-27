@@ -125,7 +125,7 @@ public class Deal_by {
 
     private static String chois_dealers(String s) {
         Boolean flag_u = true;
-        String chois_seller;
+        String chois_seller = new String();
         out_user(s);
         while (flag_u) {
 
@@ -170,7 +170,7 @@ public class Deal_by {
 
             System.out.println("Выберете покупателя");
             chois_byer =chois_dealers(buyer_role);
-            
+
             System.out.println("Выберете товар или завершите сделку");
             products = chois_product();
             System.out.println("Подтвердите офёрту");
