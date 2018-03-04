@@ -1,4 +1,10 @@
 package deal;
+import deal.Deal_by.*;
+
+//import static deal.Deal_by.inputText;
+//import static deal.Deal_by.users;
+import static deal.Deal_by.*;
+
 
 /**
  * Created by Василий on 16.02.2018.
@@ -9,8 +15,16 @@ public class User {
     private String email;
     private Integer id;
     private String user_role;
-
-
+    /*
+    public static void in_user() {
+        String name = inputText("Name");
+        String email = inputText("email");
+        int id = Integer.valueOf(inputText("id"));
+        String user_role = inputText("user_role");
+        users.put(users.size()+1, new User(name, email, id, user_role));
+        flag1 = true;
+    }
+*/
     public String getName() {
         return name;
     }
