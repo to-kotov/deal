@@ -14,9 +14,7 @@ public class Product {
         return name;
     }
 
-    public Integer getCost() {
-        return cost;
-    }
+    public Integer getCost() {return cost; }
 
     public Integer getId() {
         return id;
@@ -24,6 +22,9 @@ public class Product {
 
     public Integer getCount() {
         return count;
+    }
+    public Integer getItog() {
+        return count*cost;
     }
 
     public void setCost(Integer cost) {
@@ -34,7 +35,7 @@ public class Product {
         this.id = id;
     }
 
-    public void setcount(int cost) {
+    public void setcount(int count) {
         this.count = count;
     }
 
